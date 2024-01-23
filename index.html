@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fight Play</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        background-color: black;
+        font-family: "Inter", sans-serif;
+        display: flex;
+        padding: 0;
+        margin: 0;
+      }
+      .container-signin {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        width: 30%;
+      }
+      .logo {
+        display: flex;
+        justify-content: center;
+        margin-top: 2rem;
+      }
+      .welcome-text {
+        color: #b3b0b8;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+        line-height: 1.5;
+      }
+      .form-signin {
+        display: flex;
+        flex-direction: column;
+        width: 20rem;
+      }
+      .label-input {
+        color: white;
+        margin-bottom: 0.5rem;
+      }
+      .eye-icon {
+        position: relative;
+      }
+      .eye-icon svg {
+        position: absolute;
+        right: 1rem;
+        top: 0.5rem;
+        opacity: 10%;
+      }
+      input {
+        display: flex;
+        flex-direction: column;
+        background-color: #1e1f24;
+        border: none;
+        border-radius: 0.2rem;
+        height: 3rem;
+        width: 100%;
+        margin-bottom: 1rem;
+        color: white;
+        padding-left: 1rem;
+        padding-right: 3.5rem;
+      }
+      .forgot-senha {
+        color: #b3b0b8;
+        text-align: right;
+      }
+      .btn-enter {
+        background-color: #1d2452;
+        color: white;
+        height: 3rem;
+        width: 100%;
+        border: none;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 0.3rem;
+        font-weight: 600;
+      }
+      .separator {
+        flex-grow: 1;
+        border-top: 1px solid white;
+        margin-top: 0.7rem;
+        opacity: 0.3;
+      }
+      .ou-entre-com {
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+      }
+      .title-social-login {
+        color: white;
+        margin-bottom: 2rem;
+        margin-top: 1rem;
+        text-align: center;
+        display: flex;
+      }
+      .social-buttons {
+        display: flex;
+        width: 100%;
+      }
+      .btn-google {
+        background-color: #1e1f24;
+        border: none;
+        width: 50%;
+        height: 3rem;
+        margin-right: 1rem;
+        border-radius: 0.3rem;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 400;
+      }
+      .btn-apple {
+        background-color: #1e1f24;
+        border: none;
+        width: 50%;
+        margin-left: 1rem;
+        border-radius: 0.3rem;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .link-signup {
+        color: white;
+        margin-top: 2rem;
+      }
+      .border-social-bottons {
+        border-right: 1px solid rgba(255, 255, 255, 0.308);
+        padding-right: 0.5rem;
+        margin-right: 0.5rem;
+      }
+      a {
+        text-decoration: none;
+        color: white;
+        font-weight: 600;
+      }
+      .edit-link-forgot {
+        text-decoration: none;
+        color: yellow;
+      }
+      .photo-fighter {
+        background-image: url("./assets/images/lutador.jpg");
+        width: 50rem;
+        background-repeat: no-repeat;
+        height: 100vh;
+        background-size: cover;
+        width: 70%;
+        background-position: center;
+      }
+      @media (max-width: 640px) {
+        .photo-fighter {
+          display: none;
+        }
+        .container-signin {
+          width: 100%;
+        }
+      }
+      @media (max-width: 768px) {
+        .photo-fighter {
+          display: none;
+        }
+        .container-signin {
+          width: 100%;
+        }
+      }
+      @media (min-width: 768px) {
+        .photo-fighter {
+          display: none;
+        }
+        .container-signin {
+          width: 100%;
+          padding-top: 5rem;
+        }
+      }
+      @media (min-width: 360px) {
+        .photo-fighter {
+          display: none;
+        }
+        .container-signin {
+          width: 100%;
+        }
+      }
+      @media (min-width: 1024px) {
+        .photo-fighter {
+          width: 50%;
+          display: flex;
+        }
+        .container-signin {
+          width: 50%;
+          padding-top: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section id="PHOTO-FIGHTER" class="photo-fighter"></section>
+    <section id="CONTAINER-SIGNIN" class="container-signin">
+      <section id="LOGO" class="logo">
+        <img src="./assets/images/logo-fight-play.svg" alt="" />
+      </section>
+      <section id="WELCOME-TEXT" class="welcome-text">
+        Entre para a maior comunidade <br />de lutas amadoras do Brasil!
+      </section>
+      <section id="FORM-SIGNIN" class="form-signin">
+        <section class="label-input">E-mail</section>
+        <section><input type="text" /></section>
+        <section class="label-input">Senha</section>
+        <section class="eye-icon">
+          <input type="password" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 256 256"
+          >
+            <path
+              fill="white"
+              d="M52.44 36a6 6 0 0 0-8.88 8l20.88 23c-37.28 21.9-53.23 57-53.92 58.57a6 6 0 0 0 0 4.88c.34.77 8.66 19.22 27.24 37.8C55 185.47 84.62 206 128 206a124.91 124.91 0 0 0 52.57-11.25l23 25.29a6 6 0 0 0 8.88-8.08Zm48.62 71.32l45 49.52a34 34 0 0 1-45-49.52M128 194c-31.38 0-58.78-11.42-81.45-33.93A134.57 134.57 0 0 1 22.69 128c4.29-8.2 20.1-35.18 50-51.91l20.2 22.21a46 46 0 0 0 61.35 67.48l17.81 19.6A113.47 113.47 0 0 1 128 194m6.4-99.4a6 6 0 0 1 2.25-11.79a46.17 46.17 0 0 1 37.15 40.87a6 6 0 0 1-5.42 6.53h-.56a6 6 0 0 1-6-5.45A34.1 34.1 0 0 0 134.4 94.6m111.08 35.85c-.41.92-10.37 23-32.86 43.12a6 6 0 1 1-8-8.94A134.07 134.07 0 0 0 233.31 128a134.67 134.67 0 0 0-23.86-32.07C186.78 73.42 159.38 62 128 62a120.19 120.19 0 0 0-19.69 1.6a6 6 0 1 1-2-11.83A131.12 131.12 0 0 1 128 50c43.38 0 73 20.54 90.24 37.76c18.58 18.58 26.9 37 27.24 37.81a6 6 0 0 1 0 4.88"
+            />
+          </svg>
+        </section>
+        <section></section>
+        <section class="forgot-senha">
+          <a href="" class="edit-link-forgot">Esqueci minha senha</a>
+        </section>
+        <section>
+          <button class="btn-enter">Entrar</button>
+        </section>
+        <section id="TITLE-SOCIAL-LOGIN" class="title-social-login">
+          <section class="separator"></section>
+          <section class="ou-entre-com">Ou entre com</section>
+          <section class="separator"></section>
+        </section>
+        <section id="SOCIAL-BUTTONS" class="social-buttons">
+          <button class="btn-google">
+            <img
+              src="/assets/images/google.svg"
+              alt=""
+              class="border-social-bottons"
+            />Goggle
+          </button>
+          <button class="btn-apple">
+            <img
+              src="/assets/images/apple.svg"
+              alt=""
+              class="border-social-bottons"
+            />Apple
+          </button>
+        </section>
+      </section>
+      <section id="LINK-SIGNUP" class="link-signup">
+        Novo no Fight Play?<a href=""> Crie uma conta</a>
+      </section>
+    </section>
+  </body>
+</html>
